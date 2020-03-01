@@ -1,15 +1,15 @@
 Esta é uma simples aplicação em React para formatar texto. :)
 
-Para rodar em sua máquina:
+### Para rodar em sua máquina:
 
-#### Abra seu terminal e dê um git clone neste repositório.
+Abra seu terminal e dê um git clone neste repositório.
 
-### Abra o diretório da aplicação e dê os seguintes comandos:
+#### Abra o diretório da aplicação e dê os seguintes comandos:
 
-#### npm install
-#### npm start
+npm install
+npm start
 
-Para testar a aplicação sem precisar clonar acesse o site abaixo.
+#### Para testar a aplicação sem precisar clonar acesse o site abaixo.
 
 https://axelrammon.github.io/format-text/
 
