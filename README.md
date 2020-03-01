@@ -6,7 +6,7 @@ Abra seu terminal e dê um git clone neste repositório.
 
 #### Abra o diretório da aplicação e dê os seguintes comandos:
 
-npm install
+npm install <br/>
 npm start
 
 #### Para testar a aplicação sem precisar clonar acesse o site abaixo.
