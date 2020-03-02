@@ -5,14 +5,13 @@ import './style.css';
 
 function App(){
   
-  const [ texto, setTexto ] = useState('');
+  const [ texto, setTexto ] = useState([]);
 
   const [ variableBold, setVariableBold ] = useState('none');
   const [ variableUnderline, setVariableUnderline ] = useState('none');
   const [ variableItalic, setVariableItalic ] = useState('none'); 
   const [ variableFont, setVariableFont ] = useState('arial'); 
   const [ nameFont, setNameFont ] = useState('Cursive'); 
-
 
   const [ variableClicado1, setVariableClicado1 ] = useState('transparent');
   const [ variableClicado2, setVariableClicado2 ] = useState('transparent');
@@ -55,9 +54,11 @@ function App(){
   }
 
   function deixarPrimeiraMaius() {
-    let primeiraLetra = texto.charAt(0);
-    let primeiraLetraMaius = primeiraLetra.toUpperCase();
-    setTexto(texto.replace(primeiraLetra, primeiraLetraMaius));
+    if (texto !== null) {
+      setTexto(texto[0].toUpperCase() + texto.substring(1));
+    } else {
+      return null;
+    }
   }
 
   function fontCursive() {
@@ -107,7 +108,6 @@ function App(){
               <button onClick={fontCursive} className="btn7">
                 {nameFont}
               </button>
-
 
             </header>
           </Botoes>
