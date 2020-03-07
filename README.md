@@ -6,9 +6,9 @@
 
 #### Abra seu terminal, entre no diretório que deseja colocar aplicação e dê os seguintes comandos:
 ```
-git clone https://github.com/axelrammon/format-text.git <br/><br/>
-cd format-text <br/><br/>
-npm install <br/><br/>
+git clone https://github.com/axelrammon/format-text.git
+cd format-text
+npm install
 npm start
 ```
 #### Para testar a aplicação sem precisar clonar acesse o site abaixo.
