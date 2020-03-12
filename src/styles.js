@@ -7,7 +7,7 @@ export const Botoes = styled.header`
         color: #fff;
         padding: 15px 20px;
         margin: 10px;
-        border-radius: 10px;
+        border-radius: 5px;
         outline: none;
         border: none;
         font-size: 18px;
