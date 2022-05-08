@@ -7,6 +7,7 @@
       <button @click="primeiraMaiuscula()" v-bind:style="{backgroundColor: primeiraMaiusAativo}">Aa</button>
       <button @click="maiuscula()" v-bind:style="{backgroundColor: maiusculaAtivo}">AA</button>
       <button @click="minuscula()" v-bind:style="{backgroundColor: minusculaAtivo}">aa</button>
+      <button @click="darkSelector()" v-bind:style="{backgroundColor: darkBgAtivo}">Dark</button>
     </div>
     <div id="forms">
       <div>
@@ -16,8 +17,9 @@
           cols="70"
           rows="30"
           minlength="1"
-          maxlength="500"
+          maxlength="700"
           v-model="text"
+          v-bind:style="{backgroundColor: darkBg, color: darkColor}"
         ></textarea>
       </div>
       <div>
@@ -25,7 +27,8 @@
           id="textEditar"
           v-bind:style="
             {
-              color: cores,
+              backgroundColor: darkBg,
+              color: darkColor,
               fontWeight: pesoFonte,
               fontStyle: italicoFonte,
               textDecoration: sublinhadoFonte,
@@ -48,7 +51,6 @@ export default {
     return {
       text: '',
       textEditar: '',
-      cores: 'black',
 
       // BACKGROUND ATIVO
       negritoAtivo: '',
@@ -57,12 +59,15 @@ export default {
       primeiraMaiusAativo: '',
       maiusculaAtivo: '',
       minusculaAtivo: '',
+      darkBgAtivo: '',
       
       // CONFIGURAÇÕES 
       pesoFonte: '',
       italicoFonte: '',
       sublinhadoFonte: '',
-      transformFonte: ''
+      transformFonte: '',
+      darkColor: '#161b22',
+      darkBg: '#ecf0f1',
     }
   },
 
@@ -71,7 +76,7 @@ export default {
     negrito: function() {
       if (this.pesoFonte === '') {
         this.pesoFonte = 'bold'
-        this.negritoAtivo = '#cecccc'
+        this.negritoAtivo = '#3b6ea3'
       } else {
         this.pesoFonte = ''
         this.negritoAtivo = ''
@@ -81,7 +86,7 @@ export default {
     italico: function() {
       if (this.italicoFonte === '') {
         this.italicoFonte = 'italic'
-        this.italicoAtivo = '#cecccc'
+        this.italicoAtivo = '#3b6ea3'
       } else {
         this.italicoFonte = ''
         this.italicoAtivo = ''
@@ -91,7 +96,7 @@ export default {
     sublinhado: function() {
       if (this.sublinhadoFonte === '') {
         this.sublinhadoFonte = 'underline'
-        this.sublinhadoAtivo = '#cecccc'
+        this.sublinhadoAtivo = '#3b6ea3'
       } else {
         this.sublinhadoFonte = ''
         this.sublinhadoAtivo = ''
@@ -101,7 +106,7 @@ export default {
     primeiraMaiuscula: function() {
       if (this.transformFonte === '' || this.transformFonte === 'uppercase' || this.transformFonte === 'lowercase') {
         this.transformFonte = 'capitalize'
-        this.primeiraMaiusAativo = '#cecccc'
+        this.primeiraMaiusAativo = '#3b6ea3'
         this.maiusculaAtivo = ''
         this.minusculaAtivo = ''
       } else {
@@ -113,7 +118,7 @@ export default {
     maiuscula: function() {
       if (this.transformFonte === '' || this.transformFonte === 'capitalize' || this.transformFonte === 'lowercase') {
         this.transformFonte = 'uppercase'
-        this.maiusculaAtivo = '#cecccc'
+        this.maiusculaAtivo = '#3b6ea3'
         this.primeiraMaiusAativo = ''
         this.minusculaAtivo = ''
       } else {
@@ -125,7 +130,7 @@ export default {
     minuscula: function() {
       if (this.transformFonte === '' || this.transformFonte === 'uppercase' || this.transformFonte === 'capitalize') {
         this.transformFonte = 'lowercase'
-        this.minusculaAtivo = '#cecccc'
+        this.minusculaAtivo = '#3b6ea3'
         this.primeiraMaiusAativo = ''
         this.maiusculaAtivo = ''
       } else {
@@ -133,6 +138,18 @@ export default {
         this.minusculaAtivo = ''
       }
     },
+
+    darkSelector: function() {
+      if (this.darkBg === '') {
+        this.darkColor = '#161b22'
+        this.darkBg = '#ecf0f1'
+        this.darkBgAtivo = '#3b6ea3'
+      } else  {
+        this.darkColor = '#ecf0f1'
+        this.darkBg = '#161b22'
+        this.darkBgAtivo = ''
+      }
+    }
     
   }
 }
@@ -146,6 +163,8 @@ export default {
     resize: none;
     border: 2px solid #c0c0c0;
     border-radius: 7px;
+    background-color: #ecf0f1;
+    color: #161b22;
     /* outline: none; */
   }
 
@@ -163,12 +182,13 @@ export default {
     border: none;
     border-radius: 7px;
     font: normal 600 14px 'Ubuntu';
-    background-color: #ecf0f1;
+    background-color: #31475E;
+    color: #ecf0f1;
     transition: .5s;
   }
 
   #botoes button:hover {
-    background-color: #cecccc;
+    background-color: #3b6ea3;
     transition: .5s;
   }
 
@@ -185,9 +205,10 @@ export default {
     display: flex;
     flex: wrap;
     width: 500px;
-    height: 450px;
+    height: 430px;
     max-width: 500px;
     background-color: #ecf0f1;
+    color: #161b22;
     border-radius: 7px;
     padding: 3px;
     word-break: break-word;
@@ -195,10 +216,10 @@ export default {
 
   footer {
     /* padding: 20px; */
-    height: 44px;
+    height: 64px;
     text-align: center;
     font: normal 600 22px 'Ubuntu';
-    color: #000;
+    color: #ecf0f1;
   }
 
 
